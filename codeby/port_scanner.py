@@ -17,7 +17,7 @@ def fanc1():
 
 	try:
 		scan.connect((host, port))
-	except scan.error:
+	except socket.error:
 		print(color_b + "Port -- ", port, " -- [CLOSED]")
 	else:
 		print(color_c + "Port -- ", port, " -- [OPEN]")
@@ -35,10 +35,10 @@ def fanc2():
 			scan = socket.socket()
 			scan.settimeout(0.5)
 			scan.connect((host, i))
-		except scan.error:
-			print(color_b + "Port -- ", port, " -- [CLOSED]")
+		except socket.error:
+			print(color_b + "Port -- ", i, " -- [CLOSED]")
 		else:
-			print(color_c + "Port -- ", port, " -- [OPEN]")
+			print(color_c + "Port -- ", i, " -- [OPEN]")
 
 print("~"*50)
 
